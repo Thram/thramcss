@@ -2,7 +2,7 @@
     <div class="side-bar group">
         <div class="unit-1">
             <div class="menu">
-                <a class="menu-heading" href="/#">ThramCSS</a>
+                <a class="menu-heading" href="/#"><h1 class="text-center">ThramCSS</h1></a>
                 <ul class="menu-list" each="{menu in menus}">
                     <li class="menu-item {parent.parent.opts.view === key && 'menu-selected'}"
                         each="{key, label in menu}">

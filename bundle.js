@@ -3,6 +3,8 @@
 
 require("modules/loader");
 
+var _constants = require("modules/constants");
+
 var _riot = require("riot");
 
 var _base = require("mixins/base");
@@ -14,12 +16,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Implement Base Mixin for all tags with common functionality
 (0, _riot.mixin)(_base2.default);
 
-_riot.route.base('/');
+_riot.route.base(_constants.BASE_URL);
 
 (0, _riot.mount)('app');
 _riot.route.start(true);
 
-},{"mixins/base":2,"modules/loader":9,"riot":"riot"}],2:[function(require,module,exports){
+},{"mixins/base":2,"modules/constants":6,"modules/loader":9,"riot":"riot"}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -199,6 +201,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var APP_ID = exports.APP_ID = 'thramcss';
 var ROOT_VIEW = exports.ROOT_VIEW = 'home';
+var BASE_URL = exports.BASE_URL = '/thramcss/';
 var ROUTES = exports.ROUTES = [ROOT_VIEW].concat(['start', 'layouts', 'base', 'grids', 'forms', 'buttons', 'tables', 'menus', 'customize']);
 var NOT_FOUND_VIEW = exports.NOT_FOUND_VIEW = 'not-found';
 var PARAMS_REG_EXP = exports.PARAMS_REG_EXP = '%\{(.*?)\}'; // 3 secs
@@ -435,7 +438,7 @@ module.exports = riot.tag2('router', '<div class="group router-container"> <div 
 });
 },{"mixins/router":3,"riot":"riot"}],14:[function(require,module,exports){
 var riot = require('riot');
-module.exports = riot.tag2('side-bar', '<div class="side-bar group"> <div class="unit-1"> <div class="menu"> <a class="menu-heading" href="/#">ThramCSS</a> <ul class="menu-list" each="{menu in menus}"> <li class="menu-item {parent.parent.opts.view === key && \'menu-selected\'}" each="{key, label in menu}"> <a href="#/{key}" class="menu-link">{label}</a> </li> </ul> </div> </div> </div>', '', '', function(opts) {
+module.exports = riot.tag2('side-bar', '<div class="side-bar group"> <div class="unit-1"> <div class="menu"> <a class="menu-heading" href="/#"><h1 class="text-center">ThramCSS</h1></a> <ul class="menu-list" each="{menu in menus}"> <li class="menu-item {parent.parent.opts.view === key && \'menu-selected\'}" each="{key, label in menu}"> <a href="#/{key}" class="menu-link">{label}</a> </li> </ul> </div> </div> </div>', '', '', function(opts) {
         var tag = this;
 
         tag.menus = [
