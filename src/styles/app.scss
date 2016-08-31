@@ -1,2 +1,32 @@
 @import "../../node_modules/thramcss/src/thramcss";
 @import "../../node_modules/thramcss/src/thramcss.hacks";
+@import "settings";
+
+html, body, .router-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.side-bar {
+  background-color: $primary-color;
+  height: 100%;
+  .menu-list {
+    border-top: 1px solid #eee;
+    margin: 0;
+  }
+  .menu-item .menu-link {
+    padding: .5rem 1rem;
+  }
+  .menu-item.menu-selected,
+  .menu-link:hover,
+  .menu-link:active,
+  .menu-link:focus {
+    background-color: $secondary-color;
+
+  }
+  .menu-link {
+    color: $sidebar-font-color;
+    text-shadow: 0 1px 1px $text-shadow;
+  }
+}
