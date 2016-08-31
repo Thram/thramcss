@@ -186,7 +186,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 }
 
 .form-aligned {
-  input, textarea, select, .help-inline {
+  input, textarea, select {
     display: inline-block;
     vertical-align: middle;
   }
@@ -290,19 +290,11 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     width: 25%;
   }
 
-  .help-inline {
-    display: inline-block;
-    padding-left: 0.3em;
-    color: #666;
-    vertical-align: middle;
-    font-size: 0.875em;
-  }
 }
 
 /* Grouped Inputs */
 
 /* Inline help for forms */
-/* NOTE: help-inline is deprecated. Use .form-message-inline instead. */
 
 .form-message-inline {
   display: inline-block;
@@ -358,9 +350,8 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     }
   }
 
-  /* NOTE: help-inline is deprecated. Use .form-message-inline instead. */
 
-  .form .help-inline, .form-message-inline, .form-message {
+  .form-message-inline, .form-message {
     display: block;
     font-size: 0.75em;
 

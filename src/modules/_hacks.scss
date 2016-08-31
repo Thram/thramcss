@@ -4,7 +4,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 
 .form-aligned {
-  input, textarea, select, .help-inline {
+  input, textarea, select {
     *display: inline;
     *zoom: 1;
   }

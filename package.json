@@ -1,6 +1,6 @@
 {
   "name": "thramcss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CSS Framework based on PureCSS (purecss.io)",
   "main": "dist/thramcss.min.css",
   "scripts": {
