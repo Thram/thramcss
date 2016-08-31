@@ -55,7 +55,7 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
     "yargs": "^5.0.0",
-    "thramcss": "^1.0.1"
+    "thramcss": "^1.0.2"
 
   },
   "dependencies": {
