@@ -4,6 +4,11 @@ Copyright 2014 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/yahoo/pure/blob/master/LICENSE.md
 */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 /**
  * Always hide an element when it has the `hidden` HTML attribute.
  */
