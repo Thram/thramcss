@@ -15,6 +15,11 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   *zoom: 1;
 }
 
+.group {
+  *letter-spacing: normal; /* reset IE < 8 */
+  *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+}
+
 .unit {
   *display: inline;
 }
@@ -198,5 +203,13 @@ since IE8 won't execute CSS that contains a CSS3 selector.
       *width: $grid-24-unit * 23 - $ie-factor;
     }
 
+  }
+}
+
+// HORIZONTAL MENU
+
+.menu-horizontal {
+  .menu-item, .menu-heading, .menu-separator {
+    *display: inline;
   }
 }
