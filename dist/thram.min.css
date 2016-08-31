@@ -8,7 +8,7 @@ Based on Pure v0.6.0
 Copyright 2014 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/yahoo/pure/blob/master/LICENSE.md
-*/*,*:before,*:after{box-sizing:border-box}.hidden,[hidden]{display:none !important}.image{max-width:100%;height:auto;display:block}/*!
+*/*,*:before,*:after{box-sizing:border-box}.hidden,[hidden]{display:none !important}.image{max-width:100%;height:auto;display:block}.center{margin-right:auto;margin-left:auto;display:block}.y-center{position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.x-center{position:absolute;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.xy-center{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%)}.text-center{text-align:center}.text-left{text-align:left}.text-right{text-align:right}.flex-right{margin-left:auto}.gutter-left{padding-left:1rem}.gutter-right{padding-right:1rem}.gutter{padding-left:1rem;padding-right:1rem}.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}/*!
 Based on Pure v0.6.0
 Copyright 2014 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.

@@ -27,3 +27,69 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   height: auto;
   display: block;
 }
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.y-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.x-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.xy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-right {
+  margin-left: auto;
+}
+
+.gutter-left {
+  padding-left: 1rem;
+}
+
+.gutter-right {
+  padding-right: 1rem;
+}
+
+.gutter {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
