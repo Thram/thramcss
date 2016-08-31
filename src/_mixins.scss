@@ -1,0 +1,19 @@
+@mixin breakpoint($from:false, $to:false) {
+  $min: map-get($breakMin, $from);
+  $max: map-get($breakMax, $to);
+  @if ($min and $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if ($min and $min > 0){
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  } @else if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

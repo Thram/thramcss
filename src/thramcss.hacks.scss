@@ -6,10 +6,4 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 */
 @import 'settings';
 @import 'mixins';
-@import 'modules/normalize';
-@import 'modules/base';
-@import 'modules/buttons';
-@import 'modules/forms';
-@import 'modules/grids';
-@import 'modules/menus';
-@import 'modules/tables';
+@import 'modules/hacks';

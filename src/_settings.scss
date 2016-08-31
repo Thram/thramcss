@@ -1,5 +1,9 @@
-// Unit Sizes
+// Hacks
 $ie-factor: 0.031;
+$include-hacks: false;
+// Unit Sizes
+
 $grid-24-unit: 100% / 24;
 $grid-5-unit: 100% / 5;
-$breakpoints: (sm: 35.5em, md: 48em, lg: 64em, xl:80em);
+$breakMin: (xs: 0, sm: 35.5em, md: 48em, lg: 64em, xl:80em);
+$breakMax: (xs: 35.438em, sm: 47.938em, md: 63.938em, lg: 79.938em);
