@@ -433,7 +433,7 @@ module.exports = riot.tag2('app', '<router routes="{routes}"></router>', '', '',
 });
 },{"modules/constants":6,"riot":"riot"}],13:[function(require,module,exports){
 var riot = require('riot');
-module.exports = riot.tag2('router', '<div class="group router-container"> <div class="unit-2-24"> <side-bar view="{view}"></side-bar> </div> <div class="unit-22-24"> <view tag="{view}-view" params="{params}"></view> </div> </div>', '', '', function(opts) {
+module.exports = riot.tag2('router', '<div class="group router-container"> <div class="unit-6-24 unit-sm-5-24 unit-md-4-24 unit-lg-3-24 unit-xl-2-24"> <side-bar view="{view}"></side-bar> </div> <div class="unit-18-24 unit-sm-19-24 unit-md-20-24 unit-lg-21-24 unit-xl-22-24"> <view tag="{view}-view" params="{params}"></view> </div> </div>', '', '', function(opts) {
         this.mixin(require('mixins/router').default);
 });
 },{"mixins/router":3,"riot":"riot"}],14:[function(require,module,exports){
