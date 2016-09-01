@@ -72,6 +72,10 @@ this the same font stack that Normalize.css sets for the `body`.
     $prefix: '-#{$break}';
   }
   @include breakpoint($break) {
+    .unit#{$prefix}-0{
+      display: none;
+    }
+
     .unit#{$prefix}-1,
     .unit#{$prefix}-1-1,
     .unit#{$prefix}-1-2,
