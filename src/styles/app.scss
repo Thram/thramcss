@@ -1,25 +1,37 @@
 @import "../../node_modules/thramcss/src/thramcss";
-@import "../../node_modules/thramcss/src/thramcss.hacks";
 @import "settings";
 
-html, body, .router-container {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+body {
   font-family: 'Work Sans', sans-serif;
 }
 
-.side-bar {
+hr {
+  border: none;
+  border-bottom: 1px solid $shadow-color;
+  width: 100%;
+}
+
+.main-container {
+  padding-top: 8rem;
+}
+
+.header {
   background-color: $secondary-color;
-  height: 100%;
+  position: fixed;
+  width: 100%;
+  h1 {
+    font-size: $h4-font-size;
+  }
   .menu-heading {
     color: $sidebar-font-color;
     background-color: $primary-color;
     text-shadow: 0 1px 1px $text-shadow;
-  }
-  .menu-list {
-    border-top: 1px solid $sidebar-font-color;
-    margin: 0;
   }
   .menu-item .menu-link {
     padding: .5rem 1rem;
@@ -37,6 +49,19 @@ html, body, .router-container {
   }
 }
 
-.main-container{
-  padding: 1rem;
+.u-label {
+  display: inline-block;
+  float: left;
+  width: 50px;
+}
+.u-example {
+  display: inline-block;
+  float: left;
+  width: calc(100% - 50px);
+}
+
+.grid-units-item {
+  height: 20px;
+  background: $primary-color;
+  color: white;
 }

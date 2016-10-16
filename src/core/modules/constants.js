@@ -1,7 +1,7 @@
 export const APP_ID         = `thramcss`;
 export const ROOT_VIEW      = 'home';
 export const BASE_URL       = '/thramcss/';
-export const ROUTES         = [ROOT_VIEW].concat(['start', 'layouts', 'base', 'grids', 'forms', 'buttons', 'tables', 'menus', 'customize']);
+export const ROUTES         = [ROOT_VIEW].concat(['start', 'grids', 'forms', 'buttons', 'tables', 'menus', 'customize', 'examples']);
 export const NOT_FOUND_VIEW = 'not-found';
 export const PARAMS_REG_EXP = '%\{(.*?)\}'; // 3 secs
 export const ASSETS_URL     = '/assets'; // 3 secs

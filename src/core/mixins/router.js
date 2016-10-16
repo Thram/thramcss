@@ -16,7 +16,7 @@ export default {
     const routes = tag.opts.routes;
 
     route.parser((path) => {
-      let raw = path.replace('#/', '').replace('#', '').split('?'),
+      let raw = path.replace('#/', '').split('?'),
           uri = raw[0].split('/'),
           qs  = raw[1];
 
@@ -30,14 +30,15 @@ export default {
     });
 
     route((target, params) => {
-      const nextView = (!target ? ROOT_VIEW : (!includes(routes, target) ? NOT_FOUND_VIEW : target));
+      target         = target.split('#');
+      const nextView = (!target[0] ? ROOT_VIEW : (!includes(routes, target[0]) ? NOT_FOUND_VIEW : target[0]));
       if (tag.view != nextView) {
         setCache('last_view', {
           view  : nextView === NOT_FOUND_VIEW ? ROOT_VIEW : nextView,
           params: params
         }, CACHE_ROUTE_EXPIRATION);
         tag.update({view: nextView, params: params});
-        document.getElementsByTagName("body")[0].scrollTop = 0;
+        document.getElementsByTagName("body")[0].scrollTop = target[1] ? document.querySelector(`#${target[1]}`).offsetTop : 0;
         document.title                                     = getTitle(nextView);
       } else {
         tag.update({params: params});
