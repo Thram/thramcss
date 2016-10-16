@@ -1,23 +1,6 @@
 .group {
   letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
   text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-  /*
-  Sets the font stack to fonts known to work properly with the above letter
-  and word spacings. See: https://github.com/yahoo/pure/issues/41/
-
-  The following font stack makes Pure Grids work on all known environments.
-
-  * FreeSans: Ships with many Linux distros, including Ubuntu
-
-  * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
-    Arial to get picked up by the browser, even though neither is available
-    in Chrome OS.
-
-  * Droid Sans: Ships with all versions of Android.
-
-  * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
-  */
-  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
 
   /*
   Use flexbox when possible to avoid `letter-spacing` side-effects.
@@ -39,7 +22,6 @@
   */
 
   [class*="unit"] {
-    font-family: sans-serif;
     display: inline-block;
     zoom: 1;
     letter-spacing: normal;

@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 
 gulp.task('clean', (cb) => del([`./dist/*`], cb));
 
-gulp.task('styles:dev:hacks', () => gulp.src(`./src/thramcss.hacks.scss`)
+gulp.task('dev:hacks', () => gulp.src(`./src/thramcss.hacks.scss`)
   .pipe($.sourcemaps.init({loadMaps: true}))
   .pipe($.sass().on('error', $.sass.logError))
   .pipe($.autoprefixer({browsers: ['last 3 versions', 'ie >= 8']}))
@@ -15,7 +15,7 @@ gulp.task('styles:dev:hacks', () => gulp.src(`./src/thramcss.hacks.scss`)
   .pipe($.sourcemaps.write({sourceRoot: '/styles'}))
   .pipe(gulp.dest('./dist')));
 
-gulp.task('styles:dev', () => gulp.src(`./src/thramcss.scss`)
+gulp.task('dev', () => gulp.src(`./src/thramcss.scss`)
   .pipe($.sourcemaps.init({loadMaps: true}))
   .pipe($.sass().on('error', $.sass.logError))
   .pipe($.autoprefixer({browsers: ['last 3 versions', 'ie >= 8']}))
@@ -23,18 +23,20 @@ gulp.task('styles:dev', () => gulp.src(`./src/thramcss.scss`)
   .pipe($.sourcemaps.write({sourceRoot: '/styles'}))
   .pipe(gulp.dest('./dist')));
 
-gulp.task('styles:prod:hacks', () => gulp.src(`./src/thramcss.hacks.scss`)
+gulp.task('prod:hacks', () => gulp.src(`./src/thramcss.hacks.scss`)
   .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
   .pipe($.autoprefixer({browsers: ['last 3 versions', 'ie >= 9']}))
   .pipe($.rename('thram.hacks.min.css'))
   .pipe($.if(gzip, $.gzip({append: false})))
+  .pipe($.if(gzip, $.rename('thram.hacks.min.gzip.css')))
   .pipe(gulp.dest('./dist')));
 
-gulp.task('styles:prod', () => gulp.src(`./src/thramcss.scss`)
+gulp.task('prod', () => gulp.src(`./src/thramcss.scss`)
   .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
   .pipe($.autoprefixer({browsers: ['last 3 versions', 'ie >= 9']}))
   .pipe($.rename('thram.min.css'))
   .pipe($.if(gzip, $.gzip({append: false})))
+  .pipe($.if(gzip, $.rename('thram.min.gzip.css')))
   .pipe(gulp.dest('./dist')));
 
-gulp.task('default', sync(['clean', ['styles:dev', 'styles:dev:hacks', 'styles:prod', 'styles:prod:hacks']]));
+gulp.task('default', sync(['clean', ['dev', 'dev:hacks', 'prod', 'prod:hacks']]));
