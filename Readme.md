@@ -1,1 +1,1 @@
-# CSS Framework base on PureCSS (purecss.io)
+# SCSS/CSS Framework inspired on PureCSS (purecss.io)

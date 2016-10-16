@@ -4,6 +4,8 @@ $include-hacks: false;
 
 // Unit Sizes
 
+$grids: 5, 12, 24;
+
 $grid-24-unit: 100% / 24;
 $grid-5-unit: 100% / 5;
 $breakMin: (xs: 0, sm: 35.5em, md: 48em, lg: 64em, xl:80em);
@@ -17,3 +19,18 @@ $h4-font-size: 1.2rem;
 $h5-font-size: 1.0rem;
 $h6-font-size: 0.6rem;
 $p-font-size: 1.0rem;
+$h1-line-height: 2.4rem;
+$h2-line-height: 1.8rem;
+$h3-line-height: 1.4rem;
+$h4-line-height: 1.2rem;
+$h5-line-height: 1.0rem;
+$h6-line-height: 0.6rem;
+$p-line-height: 1.0rem;
+
+// Colors
+$primary-color: #129FEA;
+$secondary-color: #ccc;
+$error-color: #e9322d;
+$readonly-color: #eee;
+$disabled-color: #eaeded;
+$shadow-color: rgba(0, 0, 0, .2);

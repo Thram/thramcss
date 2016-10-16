@@ -12,7 +12,8 @@
     text-align: center;
   }
 
-  td, th {
+  td,
+  th {
     border-left: 1px solid #cbcbcb;
 
     /*  inner column border */
@@ -27,7 +28,8 @@
     /* cell padding */
   }
 
-  td:first-child, th:first-child {
+  td:first-child,
+  th:first-child {
     border-left-width: 0;
   }
 
@@ -43,20 +45,10 @@
   }
 }
 
-/* Consider removing this next declaration block, as it causes problems when
-there's a rowspan on the first cell. Case added to the tests. issue#432 */
-
-/*
-striping:
-   even - #fff (white)
-   odd  - #f2f2f2 (light gray)
-*/
-
-.table-odd td, .table-striped tr:nth-child(2n-1) td {
+.table-odd td,
+.table-striped tr:nth-child(2n-1) td {
   background-color: #f2f2f2;
 }
-
-/* nth-child selector for modern browsers */
 
 /* BORDERED TABLES */
 
@@ -73,7 +65,8 @@ striping:
 /* HORIZONTAL BORDERED TABLES */
 
 .table-horizontal {
-  td, th {
+  td,
+  th {
     border-width: 0 0 1px 0;
     border-bottom: 1px solid #cbcbcb;
   }

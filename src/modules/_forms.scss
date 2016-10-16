@@ -1,67 +1,23 @@
+form,
 .form {
-  input {
-    &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="date"], &[type="month"], &[type="time"], &[type="datetime"], &[type="datetime-local"], &[type="week"], &[type="number"], &[type="search"], &[type="tel"], &[type="color"] {
-      padding: 0.5em 0.6em;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-shadow: inset 0 1px 3px #ddd;
-      border-radius: 4px;
-      vertical-align: middle;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-  }
-
-  select, textarea {
+  input,
+  select,
+  textarea {
     padding: 0.5em 0.6em;
     display: inline-block;
-    border: 1px solid #ccc;
-    box-shadow: inset 0 1px 3px #ddd;
     border-radius: 4px;
     vertical-align: middle;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  input {
-    &:not([type]) {
-      padding: 0.5em 0.6em;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-shadow: inset 0 1px 3px #ddd;
-      border-radius: 4px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    &[type="color"] {
-      padding: 0.2em 0.5em;
-    }
-
-    &[type="text"]:focus, &[type="password"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="date"]:focus, &[type="month"]:focus, &[type="time"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="week"]:focus, &[type="number"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="color"]:focus {
+    &:focus {
       outline: 0;
-      border-color: #129FEA;
     }
+    &[disabled] {
+      cursor: not-allowed;
+    }
+    @include themeInput();
   }
 
-  select:focus, textarea:focus {
-    outline: 0;
-    border-color: #129FEA;
-  }
-
-  input {
-    &:not([type]):focus {
-      outline: 0;
-      border-color: #129FEA;
-    }
-
-    &[type="file"]:focus, &[type="radio"]:focus, &[type="checkbox"]:focus {
-      outline: thin solid #129FEA;
-      outline: 1px auto #129FEA;
-    }
+  input[type="color"] {
+    padding: 0.2em 0.5em;
   }
 
   .checkbox, .radio {
@@ -70,64 +26,22 @@
   }
 
   input {
-    &[type="text"][disabled], &[type="password"][disabled], &[type="email"][disabled], &[type="url"][disabled], &[type="date"][disabled], &[type="month"][disabled], &[type="time"][disabled], &[type="datetime"][disabled], &[type="datetime-local"][disabled], &[type="week"][disabled], &[type="number"][disabled], &[type="search"][disabled], &[type="tel"][disabled], &[type="color"][disabled] {
-      cursor: not-allowed;
-      background-color: #eaeded;
-      color: #cad2d3;
-    }
-  }
-
-  select[disabled], textarea[disabled] {
-    cursor: not-allowed;
-    background-color: #eaeded;
-    color: #cad2d3;
-  }
-
-  input {
-    &:not([type])[disabled] {
-      cursor: not-allowed;
-      background-color: #eaeded;
-      color: #cad2d3;
-    }
-
-    &[readonly] {
-      background-color: #eee;
-
-      /* menu hover bg color */
-      color: #777;
-
-      /* menu text color */
-      border-color: #ccc;
-    }
-  }
-
-  select[readonly], textarea[readonly] {
-    background-color: #eee;
-
-    /* menu hover bg color */
-    color: #777;
-
-    /* menu text color */
-    border-color: #ccc;
-  }
-
-  input:focus:invalid, textarea:focus:invalid, select:focus:invalid {
-    color: #b94a48;
-    border-color: #e9322d;
-  }
-
-  input {
-    &[type="file"]:focus:invalid:focus, &[type="radio"]:focus:invalid:focus, &[type="checkbox"]:focus:invalid:focus {
-      outline-color: #e9322d;
+    &[type="file"],
+    &[type="radio"],
+    &[type="checkbox"] {
+      &:focus {
+        outline: 1px auto $primary-color;
+        &:invalid:focus {
+          outline-color: $error-color;
+        }
+      }
     }
   }
 
   select {
-    /* Normalizes the height; padding is not sufficient. */
     height: 2.25em;
     border: 1px solid #ccc;
     background-color: white;
-
     &[multiple] {
       height: auto;
     }
@@ -151,80 +65,9 @@
     color: #333;
     border-bottom: 1px solid #e5e5e5;
   }
-}
 
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-
-/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
-/* May be able to remove this tweak as color inputs become more standardized across browsers. */
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-
-.form-stacked {
-  input {
-    &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="date"], &[type="month"], &[type="time"], &[type="datetime"], &[type="datetime-local"], &[type="week"], &[type="number"], &[type="search"], &[type="tel"], &[type="color"], &[type="file"] {
-      display: block;
-      margin: 0.25em 0;
-    }
-  }
-
-  select, label, textarea, input:not([type]) {
-    display: block;
-    margin: 0.25em 0;
-  }
-}
-
-.form-aligned {
-  input, textarea, select {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
-
-.form-message-inline {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.form-aligned {
-  textarea {
-    vertical-align: top;
-  }
-
-  .control-group {
-    margin-bottom: 0.5em;
-
-    label {
-      text-align: right;
-      display: inline-block;
-      vertical-align: middle;
-      width: 10em;
-      margin: 0 1em 0 0;
-    }
-  }
-
-  .controls {
-    margin: 1.5em 0 0 11em;
-  }
-}
-
-/* Aligned Forms */
-
-/* Rounded Inputs */
-
-.form {
-  input.input-rounded, .input-rounded {
+  input.input-rounded,
+  .input-rounded {
     border-radius: 2em;
     padding: 0.5em 1em;
   }
@@ -292,9 +135,51 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 
 }
 
-/* Grouped Inputs */
+.form-stacked {
+  select,
+  label,
+  textarea,
+  input {
+    display: block;
+    margin: 0.25em 0;
+  }
+}
 
-/* Inline help for forms */
+.form-aligned {
+  input,
+  textarea,
+  select {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.form-message-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-aligned {
+  textarea {
+    vertical-align: top;
+  }
+
+  .control-group {
+    margin-bottom: 0.5em;
+
+    label {
+      text-align: right;
+      display: inline-block;
+      vertical-align: middle;
+      width: 10em;
+      margin: 0 1em 0 0;
+    }
+  }
+
+  .controls {
+    margin: 1.5em 0 0 11em;
+  }
+}
 
 .form-message-inline {
   display: inline-block;
@@ -303,8 +188,6 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   vertical-align: middle;
   font-size: 0.875em;
 }
-
-/* Block help for forms */
 
 .form-message {
   display: block;
@@ -319,10 +202,8 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     }
 
     input {
-      &:not([type]), &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="date"], &[type="month"], &[type="time"], &[type="datetime"], &[type="datetime-local"], &[type="week"], &[type="number"], &[type="search"], &[type="tel"], &[type="color"] {
-        margin-bottom: 0.3em;
-        display: block;
-      }
+      margin-bottom: 0.3em;
+      display: block;
     }
 
     label {
@@ -332,9 +213,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   }
 
   .form-group input {
-    &:not([type]), &[type="text"], &[type="password"], &[type="email"], &[type="url"], &[type="date"], &[type="month"], &[type="time"], &[type="datetime"], &[type="datetime-local"], &[type="week"], &[type="number"], &[type="search"], &[type="tel"], &[type="color"] {
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
   }
 
   .form-aligned {
@@ -350,8 +229,8 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     }
   }
 
-
-  .form-message-inline, .form-message {
+  .form-message-inline,
+  .form-message {
     display: block;
     font-size: 0.75em;
 
